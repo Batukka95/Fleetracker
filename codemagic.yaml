@@ -1,0 +1,12 @@
+# Opsiyonel: Codemagic ile derlemek için
+workflows:
+  fleetracker-android:
+    name: Fleetracker APK
+    max_build_duration: 20
+    scripts:
+      - name: Debug APK derle
+        script: |
+          gradle assembleDebug --no-daemon
+    artifacts:
+      - app/build/outputs/apk/debug/*.apk
+
